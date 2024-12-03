@@ -11,12 +11,13 @@
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
             overflow: hidden;
+            position: relative;
         }
 
         /* Fundo com pontos */
         .background {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(10px, 1fr)); /* Ajusta automaticamente o layout */
+            grid-template-columns: repeat(auto-fill, minmax(10px, 1fr));
             position: absolute;
             top: 0;
             left: 0;
@@ -25,11 +26,36 @@
             font-size: 16px;
             color: #666;
             font-weight: bold;
-            line-height: 20px; /* Espaçamento vertical */
+            line-height: 20px;
+            pointer-events: none;
         }
 
         .background span {
             text-align: center;
+        }
+
+        /* Áreas sem pontos */
+        .text-zone {
+            position: absolute;
+            background-color: #f0f0f0;
+            z-index: 50;
+        }
+
+        .top-left {
+            top: 10px;
+            left: 10px;
+            padding: 5px;
+            font-size: 14px;
+            color: #888;
+            font-style: italic;
+        }
+
+        .bottom-right {
+            bottom: 10px;
+            right: 10px;
+            padding: 5px;
+            font-size: 14px;
+            color: #888;
         }
 
         /* Estilo da janela de login */
@@ -78,27 +104,9 @@
             background-color: #45a049;
         }
 
-        /* Texto adicional no fundo */
-        .background-text {
-            position: absolute;
-            z-index: 50;
-            color: #888;
-            font-size: 14px;
-            font-style: italic;
-        }
-
-        .background-text.top-left {
-            top: 10px;
-            left: 10px;
-        }
-
-        .background-text.bottom-right {
-            bottom: 10px;
-            right: 10px;
-        }
-
         @media (max-width: 600px) {
-            .background-text {
+            .top-left,
+            .bottom-right {
                 font-size: 12px;
             }
         }
@@ -109,12 +117,13 @@
         <!-- Pontos serão gerados dinamicamente -->
     </div>
 
-    <div class="background-text top-left">
+    <!-- Áreas de texto sem pontos -->
+    <div class="text-zone top-left">
         nunca amei tantos pontos na minha vida
     </div>
 
-    <div class="background-text bottom-right">
-        Usuário: meuamor | Senha: olhosquemefascinam
+    <div class="text-zone bottom-right">
+        Usuário: meuamor<br>Senha: olhosquemefascinam
     </div>
 
     <div class="login-popup">
