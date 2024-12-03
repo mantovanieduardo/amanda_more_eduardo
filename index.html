@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,16 +22,32 @@
             left: 0;
             width: 100%;
             height: 100%;
-            font-size: 16px;
-            /* Ajustado para o tamanho dos pontos */
+            font-size: 16px; /* Ajustado para o tamanho dos pontos */
             color: #666;
             font-weight: bold;
         }
 
         .background span {
-            width: 10px;
-            /* Espaçamento horizontal entre os pontos */
+            width: 10px; /* Espaçamento horizontal entre os pontos */
             text-align: center;
+        }
+
+        /* Texto adicional */
+        .corner-text {
+            position: absolute;
+            font-size: 18px;
+            color: #444;
+            font-style: italic;
+        }
+
+        .top-left {
+            top: 10px;
+            left: 10px;
+        }
+
+        .bottom-right {
+            bottom: 10px;
+            right: 10px;
         }
 
         /* Estilo da janela de login */
@@ -81,10 +96,18 @@
         }
     </style>
 </head>
-
 <body>
     <div class="background">
         <!-- Pontos serão gerados dinamicamente -->
+    </div>
+
+    <div class="corner-text top-left">
+        nunca amei tantos pontos na minha vida
+    </div>
+
+    <div class="corner-text bottom-right">
+        Usuário: meuamor<br>
+        Senha: olhosquemefascinam
     </div>
 
     <div class="login-popup">
@@ -101,32 +124,4 @@
         const dot = '.';
 
         function fillDots() {
-            const totalRows = Math.ceil(window.innerHeight / 20); // Espaçamento vertical
-            const totalCols = Math.ceil(window.innerWidth / 10); // Espaçamento horizontal
-
-            background.innerHTML = '';
-            for (let i = 0; i < totalRows * totalCols; i++) {
-                const span = document.createElement('span');
-                span.textContent = dot;
-                background.appendChild(span);
-            }
-        }
-
-        window.addEventListener('resize', fillDots);
-        fillDots();
-
-        function checkLogin(event) {
-            event.preventDefault(); // Evita o envio do formulário
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-
-            if (username === 'meuamor' && password === 'olhosquemehipnotizam') {
-                alert('Login bem-sucedido!');
-            } else {
-                alert('Usuário ou senha incorretos!');
-            }
-        }
-    </script>
-</body>
-
-</html>
+            const totalRows = Math.ceil(window.innerHei
