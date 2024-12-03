@@ -67,10 +67,11 @@
             font-size: 14px;
         }
 
+        /* Botão com cor rosa escuro */
         .login-popup button {
             width: 100%;
             padding: 10px;
-            background-color: #4caf50;
+            background-color: #d81b60; /* Rosa escuro */
             border: none;
             border-radius: 5px;
             color: white;
@@ -79,7 +80,7 @@
         }
 
         .login-popup button:hover {
-            background-color: #45a049;
+            background-color: #c2185b; /* Um tom mais escuro quando o botão for hover */
         }
 
         /* Texto adicional no fundo */
@@ -146,45 +147,4 @@
 
     <!-- Caixa de Login -->
     <div class="login-popup">
-        <form onsubmit="return checkLogin(event)">
-            <input type="text" id="username" placeholder="Usuário" required>
-            <input type="password" id="password" placeholder="Senha" required>
-            <button type="submit">Entrar</button>
-        </form>
-    </div>
-
-    <script>
-        const background = document.querySelector('.background');
-        const dot = '.';
-
-        function fillDots() {
-            const totalRows = Math.ceil(window.innerHeight / 20); // Espaçamento vertical
-            const totalCols = Math.ceil(window.innerWidth / 10); // Espaçamento horizontal
-
-            background.innerHTML = '';
-            for (let i = 1; i < totalRows - 1; i++) { // Evita a primeira e última linha
-                for (let j = 0; j < totalCols; j++) {
-                    const span = document.createElement('span');
-                    span.textContent = dot;
-                    background.appendChild(span);
-                }
-            }
-        }
-
-        window.addEventListener('resize', fillDots);
-        fillDots();
-
-        function checkLogin(event) {
-            event.preventDefault(); // Evita o envio do formulário
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-
-            if (username === 'meuamor' && password === 'olhosquemefascinam') {
-                alert('Login bem-sucedido!');
-            } else {
-                alert('Usuário ou senha incorretos!');
-            }
-        }
-    </script>
-</body>
-</html>
+       
