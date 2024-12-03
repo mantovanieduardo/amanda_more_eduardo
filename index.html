@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Pontos</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            overflow: hidden;
+        }
+
+        /* Fundo com pontos */
+        .background {
+            display: flex;
+            flex-wrap: wrap;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            font-size: 16px;
+            /* Ajustado para o tamanho dos pontos */
+            color: #666;
+            font-weight: bold;
+        }
+
+        .background span {
+            width: 10px;
+            /* Espaçamento horizontal entre os pontos */
+            text-align: center;
+        }
+
+        /* Estilo da janela de login */
+        .login-popup {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            width: 300px;
+            z-index: 100;
+        }
+
+        .login-popup h2 {
+            margin-bottom: 20px;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .login-popup input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .login-popup button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .login-popup button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background">
+        <!-- Pontos serão gerados dinamicamente -->
+    </div>
+
+    <div class="login-popup">
+        <h2>Login</h2>
+        <form onsubmit="return checkLogin(event)">
+            <input type="text" id="username" placeholder="Usuário" required>
+            <input type="password" id="password" placeholder="Senha" required>
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+
+    <script>
+        const background = document.querySelector('.background');
+        const dot = '.';
+
+        function fillDots() {
+            const totalRows = Math.ceil(window.innerHeight / 20); // Espaçamento vertical
+            const totalCols = Math.ceil(window.innerWidth / 10); // Espaçamento horizontal
+
+            background.innerHTML = '';
+            for (let i = 0; i < totalRows * totalCols; i++) {
+                const span = document.createElement('span');
+                span.textContent = dot;
+                background.appendChild(span);
+            }
+        }
+
+        window.addEventListener('resize', fillDots);
+        fillDots();
+
+        function checkLogin(event) {
+            event.preventDefault(); // Evita o envio do formulário
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === 'meuamor' && password === 'olhosquemehipnotizam') {
+                alert('Login bem-sucedido!');
+            } else {
+                alert('Usuário ou senha incorretos!');
+            }
+        }
+    </script>
+</body>
+
+</html>
