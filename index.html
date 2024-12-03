@@ -43,7 +43,8 @@
             border-radius: 8px;
             padding: 20px;
             text-align: center;
-            width: 300px;
+            width: 80%;
+            max-width: 350px; /* Limite máximo para a largura */
             z-index: 100;
         }
 
@@ -94,6 +95,29 @@
         .background-text.bottom-right {
             bottom: 10px;
             right: 10px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 600px) {
+            .background span {
+                width: 8px; /* Diminuindo o tamanho dos pontos em telas pequenas */
+                font-size: 12px; /* Ajustando o tamanho do texto dos pontos */
+            }
+
+            .login-popup {
+                width: 90%; /* Janela de login ocupará 90% da largura da tela */
+                max-width: none; /* Sem limite máximo para a largura */
+            }
+
+            .background-text {
+                font-size: 14px; /* Ajustando o tamanho do texto */
+            }
+        }
+
+        @media (max-width: 400px) {
+            .background span {
+                width: 6px; /* Diminui ainda mais os pontos em telas muito pequenas */
+            }
         }
     </style>
 </head>
