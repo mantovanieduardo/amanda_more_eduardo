@@ -17,7 +17,7 @@
         /* Fundo com pontos */
         .background {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(10px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(20px, 1fr));
             position: absolute;
             top: 0;
             left: 0;
@@ -140,8 +140,8 @@
         const dot = '.';
 
         function fillDots() {
-            const totalRows = Math.ceil(window.innerHeight / 20); // Espaçamento vertical
-            const totalCols = Math.ceil(window.innerWidth / 10); // Espaçamento horizontal
+            const totalRows = Math.ceil(window.innerHeight / 40); // Menor espaçamento vertical
+            const totalCols = Math.ceil(window.innerWidth / 20); // Menor espaçamento horizontal
 
             background.innerHTML = '';
             for (let i = 0; i < totalRows * totalCols; i++) {
