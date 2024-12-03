@@ -48,11 +48,12 @@
             z-index: 100;
         }
 
-        /* Ajustando o formulário para alinhar melhor */
+        /* Formulário centralizado e estilizado */
         .login-popup form {
             display: flex;
             flex-direction: column;
-            gap: 10px; /* Espaço entre os campos */
+            gap: 15px; /* Espaço entre os campos */
+            align-items: center;
             width: 100%;
         }
 
@@ -137,6 +138,7 @@
         Usuário: meuamor | Senha: olhosquemefascinam
     </div>
 
+    <!-- Caixa de Login -->
     <div class="login-popup">
         <form onsubmit="return checkLogin(event)">
             <input type="text" id="username" placeholder="Usuário" required>
