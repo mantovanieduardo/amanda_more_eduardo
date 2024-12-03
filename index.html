@@ -162,10 +162,12 @@
             const totalCols = Math.ceil(window.innerWidth / 10); // Espaçamento horizontal
 
             background.innerHTML = '';
-            for (let i = 0; i < totalRows * totalCols; i++) {
-                const span = document.createElement('span');
-                span.textContent = dot;
-                background.appendChild(span);
+            for (let i = 1; i < totalRows - 1; i++) { // Evita a primeira e última linha
+                for (let j = 0; j < totalCols; j++) {
+                    const span = document.createElement('span');
+                    span.textContent = dot;
+                    background.appendChild(span);
+                }
             }
         }
 
