@@ -48,12 +48,6 @@
             z-index: 100;
         }
 
-        .login-popup h2 {
-            margin-bottom: 20px;
-            font-size: 20px;
-            color: #333;
-        }
-
         .login-popup input {
             width: 100%;
             padding: 10px;
@@ -110,10 +104,6 @@
                 padding: 15px; /* Menos espaço em telas pequenas */
             }
 
-            .login-popup h2 {
-                font-size: 18px; /* Reduzindo o tamanho do título */
-            }
-
             .background-text {
                 font-size: 14px; /* Ajustando o tamanho do texto */
             }
@@ -140,7 +130,6 @@
     </div>
 
     <div class="login-popup">
-        <h2>Entrar</h2>
         <form onsubmit="return checkLogin(event)">
             <input type="text" id="username" placeholder="Usuário" required>
             <input type="password" id="password" placeholder="Senha" required>
