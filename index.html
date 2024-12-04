@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Pontos</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            overflow: hidden;
+        }
+
+        /* Fundo com pontos */
+        .background {
+            display: flex;
+            flex-wrap: wrap;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            font-size: 16px;
+            color: #666;
+            font-weight: bold;
+            z-index: -1; /* Coloca os pontos atrás de tudo */
+        }
+
+        .background span {
+            width: 10px; /* Espaçamento horizontal entre os pontos */
+            text-align: center;
+        }
+
+        /* Estilo da janela de login */
+        .login-popup {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #add8e6; /* Azul claro */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            width: 80%; /* Largura ajustada para telas menores */
+            max-width: 350px; /* Limite máximo para a largura */
+            z-index: 100; /* Caixa de login em uma camada superior */
+        }
+
+        /* Formulário centralizado e estilizado */
+        .login-popup form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Espaço entre os campos */
+            align-items: center;
+            width: 100%;
+        }
+
+        .login-popup input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        /* Botão com cor rosa escuro */
+        .login-popup button {
+            width: 100%;
+            padding: 10px;
+            background-color: #d81b60; /* Rosa escuro */
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .login-popup button:hover {
+            background-color: #c2185b; /* Um tom mais escuro quando o botão for hover */
+        }
+
+        /* Texto adicional no fundo */
+        .background-text {
+            position: absolute;
+            z-index: 50;
+            color: #888;
+            font-size: 18px;
+            font-style: italic;
+        }
+
+        .background-text.top-left {
+            top: 10px;
+            left: 10px;
+        }
+
+        .background-text.bottom-right {
+            bottom: 10px;
+            right: 10px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 600px) {
+            .background span {
+                width: 8px; /* Diminuindo o tamanho dos pontos em telas pequenas */
+                font-size: 12px; /* Ajustando o tamanho do texto dos pontos */
+            }
+
+            .login-popup {
+                width: 90%; /* Janela de login ocupará 90% da largura da tela */
+                max-width: 320px; /* Limite máximo reduzido */
+                padding: 15px; /* Menos espaço em telas pequenas */
+            }
+
+            .background-text {
+                font-size: 14px; /* Ajustando o tamanho do texto */
+            }
+        }
+
+        @media (max-width: 400px) {
+            .background span {
+                width: 6px; /* Diminui ainda mais os pontos em telas muito pequenas */
+            }
+
+            .login-popup {
+                width: 90%; /* Mantendo 90% de largura */
+                max-width: 280px; /* Limite máximo reduzido ainda mais */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <!-- Pontos serão gerados dinamicamente -->
+    </div>
+
+    <div class="background-text top-left">
+        nunca amei tantos pontos na minha vida
+    </div>
+
+    <div class="background-text bottom-right">
+        Usuário: meuamor | Senha: olhosquemefascinam
+    </div>
+
+    <!-- Caixa de Login -->
+    <div class="login-popup">
+        <form onsubmit="return checkLogin(event)">
+            <input type="text" id="username" placeholder="Usuário" required>
+            <input type="password" id="password" placeholder="Senha" required>
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+
+    <script>
+        const background = document.querySelector('.background');
+        const dot = '.';
+
+        function fillDots() {
+            const totalRows = Math.ceil(window.innerHeight / 20); // Espaçamento vertical
+            const totalCols = Math.ceil(window.innerWidth / 10); // Espaçamento horizontal
+
+            background.innerHTML = '';
+            for (let i = 1; i < totalRows - 1; i++) { // Evita a primeira e última linha
+                for (let j = 0; j < totalCols; j++) {
+                    const span = document.createElement('span');
+                    span.textContent = dot;
+                    background.appendChild(span);
+                }
+            }
+        }
+
+        window.addEventListener('resize', fillDots);
+        fillDots();
+
+        function checkLogin(event) {
+            event.preventDefault(); // Evita o envio do formulário
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === 'meuamor' && password === 'olhosquemefascinam') {
+                alert('Login bem-sucedido!');
+            } else {
+                alert('Usuário ou senha incorretos!');
+            }
+        }
+    </script>
+</body>
+</html>
