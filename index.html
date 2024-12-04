@@ -9,7 +9,7 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background-color: #000428; /* Azul escuro bem forte */
             overflow: hidden;
         }
 
@@ -23,7 +23,7 @@
             width: 100%;
             height: 100%;
             font-size: 16px;
-            color: #666;
+            color: white; /* Pontos brancos */
             font-weight: bold;
             z-index: -1; /* Coloca os pontos atrás de tudo */
         }
@@ -39,14 +39,15 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background-color: #add8e6; /* Azul claro */
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            background-color: #023e8a; /* Azul claro mais forte */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
             border-radius: 8px;
             padding: 20px;
             text-align: center;
             width: 80%; /* Largura ajustada para telas menores */
             max-width: 350px; /* Limite máximo para a largura */
             z-index: 100; /* Caixa de login em uma camada superior */
+            color: white; /* Texto na caixa de login branco */
         }
 
         /* Formulário centralizado e estilizado */
@@ -87,7 +88,7 @@
         .background-text {
             position: absolute;
             z-index: 50;
-            color: #888;
+            color: white; /* Texto do fundo em branco */
             font-size: 18px;
             font-style: italic;
         }
