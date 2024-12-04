@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style2.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="login-container">
+        <h1>LOGIN</h1>
+        <form onsubmit="return checkLogin(event)">
+            <input type="text" id="username" placeholder="Usuário" required>
+            <input type="password" id="password" placeholder="Senha" required>
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+
+    <!-- Botão "Clique aqui" -->
+    <div class="reveal-btn" onclick="revealInfo()">Clique aqui</div>
+
+    <!-- Container de 'Usuário e Senha' -->
+    <div class="info-container" id="info-container">
+        <p>Usuário: meuamor</p>
+        <p>Senha: olhosquemefascinam</p>
+    </div>
+
+    <script>
+        function checkLogin(event) {
+            event.preventDefault(); // Evita o envio do formulário
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === 'meuamor' && password === 'olhosquemefascinam') {
+                alert('Nunca amei alguém tantos pontos na minha vida');
+                // Redireciona para outra página após o login
+                window.location.href = 'flowers.html';
+            } else {
+                alert('Usuário ou senha incorretos!');
+            }
+        }
+
+        function revealInfo() {
+            // Esconde o botão "Clique aqui"
+            document.querySelector('.reveal-btn').style.display = 'none';
+            // Exibe o container com as informações de login
+            document.getElementById('info-container').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
