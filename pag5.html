@@ -18,6 +18,7 @@
             height: 100vh; /* 100% da altura da tela */
             object-fit: cover; /* Garantir que o vídeo cubra a tela sem deformar */
             border: none; /* Remove bordas */
+            transform: translateX(-10%); /* Move o vídeo 10% para a esquerda */
         }
     </style>
 </head>
@@ -31,7 +32,7 @@
     <script>
         // Acelerar o vídeo para 1.25x (25% mais rápido)
         var video = document.getElementById("myVideo");
-        video.playbackRate = 1.50; // Valor padrão é 1 (velocidade normal), então 1.25 acelera em 25%
+        video.playbackRate = 1.25; // Valor padrão é 1 (velocidade normal), então 1.25 acelera em 25%
     </script>
 </body>
 </html>
