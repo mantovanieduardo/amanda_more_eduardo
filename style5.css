@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Remove barras de rolagem */
+    background-color: black;
+}
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Largura da janela inteira */
+    height: 100vh; /* Altura da janela inteira */
+    object-fit: cover; /* Cobre toda a área da tela sem distorcer */
+    transform: translateX(-3%); /* Move 5% para a esquerda */
+}
