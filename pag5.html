@@ -23,9 +23,15 @@
 </head>
 <body>
     <!-- Reproduzindo o vídeo local -->
-    <video autoplay muted loop>
-        <source src="Videos/eyes60.mp4" type="video/mp4">
+    <video autoplay muted loop id="myVideo">
+        <source src="C:/caminho/para/seu/video.mp4" type="video/mp4">
         Seu navegador não suporta este vídeo.
     </video>
+
+    <script>
+        // Acelerar o vídeo para 1.25x (25% mais rápido)
+        var video = document.getElementById("myVideo");
+        video.playbackRate = 1.50; // Valor padrão é 1 (velocidade normal), então 1.25 acelera em 25%
+    </script>
 </body>
 </html>
