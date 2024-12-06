@@ -67,3 +67,11 @@ function displayWordsAnimation() {
         }
     }, 3000 / words.length); // Distribui o tempo igualmente para todas as palavras
 }
+
+setTimeout(() => {
+    const flowers = document.querySelectorAll('.flowers');
+    flowers.forEach(flower => {
+        flower.classList.add('fade'); // Adiciona a classe que inicia a animação
+    });
+}, 10000); // 10 segundos
+
