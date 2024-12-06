@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vídeo em Tela Cheia</title>
+    <title>Vídeos em Sequência</title>
     <style>
         body, html {
             margin: 0;
@@ -18,21 +18,31 @@
             height: 100vh; /* 100% da altura da tela */
             object-fit: cover; /* Garantir que o vídeo cubra a tela sem deformar */
             border: none; /* Remove bordas */
-            transform: translateX(-3%); /* Move o vídeo 10% para a esquerda */
         }
     </style>
 </head>
 <body>
-    <!-- Reproduzindo o vídeo local -->
-    <video autoplay muted loop id="myVideo">
-        <source src="Videos/eyes60.mp4" type="video/mp4">
+    <!-- Reproduzindo o primeiro vídeo -->
+    <video autoplay muted id="myVideo">
+        <source src="Videos/eyes1.mp4" type="video/mp4">
         Seu navegador não suporta este vídeo.
     </video>
 
     <script>
-        // Acelerar o vídeo para 1.25x (25% mais rápido)
-        var video = document.getElementById("myVideo");
-        video.playbackRate = 1.25; // Valor padrão é 1 (velocidade normal), então 1.25 acelera em 25%
+        const video = document.getElementById("myVideo");
+
+        // Acelerar o vídeo para 1.25x
+        video.playbackRate = 1.25;
+
+        // Quando o vídeo terminar, carregar e reproduzir o próximo vídeo
+        video.addEventListener("ended", function () {
+            // Alterar a fonte para o próximo vídeo
+            video.src = "Videos/eyes2.mp4";
+
+            // Reiniciar o vídeo
+            video.load();
+            video.play();
+        });
     </script>
 </body>
 </html>
