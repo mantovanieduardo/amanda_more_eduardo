@@ -9,11 +9,17 @@
             margin: 0;
             padding: 0;
             overflow: hidden;
+            background: black; /* Fundo preto */
         }
-        video {
+        #video-container {
+            display: none; /* Esconde o vídeo até que esteja carregado */
             position: fixed;
             top: 0;
             left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        video {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -21,9 +27,20 @@
     </style>
 </head>
 <body>
-    <video autoplay loop muted>
-        <source src="Videos/Eyes.mp4" type="video/mp4">
-        Seu navegador não suporta vídeos em HTML5.
-    </video>
+    <div id="video-container">
+        <video autoplay loop muted>
+            <source src="Videos/Eyes.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos em HTML5.
+        </video>
+    </div>
+    <script>
+        const videoContainer = document.getElementById('video-container');
+        const video = videoContainer.querySelector('video');
+
+        // Exibe o vídeo quando estiver pronto
+        video.addEventListener('canplay', () => {
+            videoContainer.style.display = 'block';
+        });
+    </script>
 </body>
 </html>
