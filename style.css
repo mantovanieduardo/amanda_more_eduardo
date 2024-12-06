@@ -990,3 +990,21 @@ mask-image: linear-gradient(to top, transparent 40%, #079097 80%) !important;
 .flowers.hidden {
   opacity: 0;
 }
+
+.flowers {
+  animation: fadeOut 3s forwards;
+  animation-delay: 8s; /* Inicia a animação após 10 segundos */
+}
+
+@keyframes fadeOut {
+  from {
+      opacity: 1;
+  }
+  to {
+      opacity: 0;
+  }
+}
+
+.fade {
+  animation: fadeOut 3s forwards;
+}
