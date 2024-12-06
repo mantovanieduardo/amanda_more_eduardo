@@ -1,48 +1,29 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>our eyes</title>
+    <title>Vídeo Tela Cheia</title>
     <style>
-        body, html {
+        body {
             margin: 0;
             padding: 0;
-            height: 100%;
-            background: #000;
-            overflow: hidden; /* Evita barras de rolagem */
+            overflow: hidden;
         }
-
         video {
-            width: 100vw; /* 100% da largura da tela */
-            height: 100vh; /* 100% da altura da tela */
-            object-fit: cover; /* Garantir que o vídeo cubra a tela sem deformar */
-            border: none; /* Remove bordas */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
     </style>
 </head>
 <body>
-    <!-- Reproduzindo o primeiro vídeo -->
-    <video autoplay muted preload="metadata" id="myVideo">
-        <source src="Videos/eyes1.mp4" type="video/mp4">
-        Seu navegador não suporta este vídeo.
+    <video autoplay loop muted>
+        <source src="Videos/Eyes.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos em HTML5.
     </video>
-
-    <script>
-        const video = document.getElementById("myVideo");
-
-        // Acelerar o vídeo para 1.25x
-        video.playbackRate = 3;
-
-        // Quando o vídeo terminar, carregar e reproduzir o próximo vídeo
-        video.addEventListener("ended", function () {
-            // Alterar a fonte para o próximo vídeo
-            video.src = "Videos/eyes2.mp4";
-
-            // Reiniciar o vídeo
-            video.load();
-            video.play();
-        });
-    </script>
 </body>
 </html>
