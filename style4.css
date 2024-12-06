@@ -52,14 +52,14 @@ body {
 .animated-image {
     max-width: 70%; /* Garante que a imagem não ultrapasse o contêiner */
     height: auto;
-    border-radius: 10px; /* Bordas arredondadas para estilo */
+    border-radius: 5px; /* Bordas arredondadas para estilo */
     width: 100%; /* Faz a imagem ocupar toda a largura do contêiner */
 }
 
 /* Adiciona uma consulta de mídia para telas maiores */
 @media (min-width: 500px) {
     .image-container {
-        max-width: 15%; /* Para telas grandes, limite a largura a 80% */
+        max-width: 30%; /* Para telas grandes, limite a largura a 80% */
     }
 }
 
@@ -102,7 +102,7 @@ body {
 
 /* Estilo do botão ao passar o mouse */
 .button:hover {
-    background-color: #ff0000;
+    background-color: #6c389c;
 }
 
 .button-image {
