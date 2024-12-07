@@ -28,11 +28,11 @@
 </head>
 <body>
     <div id="video-container">
-        <video autoplay loop muted>
-            <source src="Videos/Eyes.mp4" type="video/mp4">
-            Seu navegador não suporta vídeos em HTML5.
-        </video>
-    </div>
+    <video autoplay loop muted playsinline>
+        <source src="Videos/Eyes.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos em HTML5.
+    </video>
+    </div> 
     <script>
         const videoContainer = document.getElementById('video-container');
         const video = videoContainer.querySelector('video');
